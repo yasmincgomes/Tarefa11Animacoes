@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+body {
+  height: 50vh;
+  font-family: "Courier New", Courier, monospace;
+  background-color: rgb(255, 122, 140);
+  color: #f8f8f8;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main h1 {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 3rem;
+}
+main > p {
+  margin-top: 0.8rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+main div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main div img {
+  margin-top: 3rem;
+  animation: brilhaEstrelinha 3.1s infinite;
+  animation-delay: 1s;
+}
+main div img.estrela-principal {
+  width: 25rem;
+  animation: brilhaGiraEstrelinha 3.1s infinite;
+  animation-delay: 1s;
+  z-index: 1;
+}
+
+main div.nome img.estrela-pequena {
+  margin-top: 0;
+  margin-left: 0.5rem;
+  width: 1.5rem;
+  animation: brilhaEstrelinha 900ms infinite;
+}
+
+@keyframes brilhaGiraEstrelinha {
+  0% {
+    transform: rotateZ(50deg);
+  }
+  50% {
+    opacity: 0;
+    transform: rotateZ(-50deg);
+  }
+  100% {
+    transform: rotateZ(50deg);
+    opacity: 1;
+  }
+}
+
+@keyframes brilhaEstrelinha {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+div.nome {
+  bottom: 10rem;
+  z-index: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
